@@ -1,4 +1,4 @@
-<script type="text/javascript" src="./heart.beats.js"></script>
+<script type="text/javascript" src="./data.js"></script>
 <canvas id="c" width="500" height="200"></canvas>
 
 
@@ -51,17 +51,6 @@ function drawLine(ctx, y, h) {
 
      var total_width = 100;
 
-   function randHeight(position) {
-     if (Number(position) >= 0) {
-     return total_width/2 - position*25;
-     }else{
-       h = total_width/2 - Number(position)*25;
-       console.log(h);
-       return h;
-     }
-   }
-    
-    
     ctx.globalCompositeOperation = 'source-over';
     
     ctx.fillRect(0, y, ctx.canvas.width, h);
@@ -74,7 +63,7 @@ function drawLine(ctx, y, h) {
     var lastPosition = total_width/2;
     ctx.moveTo(0, lastPosition);
     for (var i = 0; i < json_data.lines_to_array.length; i++) {
-            ctx.lineTo(json_data.lines_to_array[i][0]/5, randHeight(json_data.lines_to_array[i][1]));
+            ctx.lineTo(json_data.lines_to_array[i][0], json_data.lines_to_array[i][1]);
         }
     ctx.stroke();
     
