@@ -74,7 +74,7 @@ function drawLine(ctx, y, h) {
     var lastPosition = total_width/2;
     ctx.moveTo(0, lastPosition);
     for (var i = 0; i < json_data.lines_to_array.length; i++) {
-            ctx.lineTo(json_data.lines_to_array[i][0]/5, randHeight(json_data.lines_to_array[i][1]));
+            ctx.lineTo(json_data.lines_to_array[i][0]/6, randHeight(json_data.lines_to_array[i][1]));
         }
     ctx.stroke();
     
